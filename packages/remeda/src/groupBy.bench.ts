@@ -19,39 +19,39 @@ const REGIONS = ["NA", "EU", "APAC", "LATAM", "MEA", "OCE", "AFRICA", "ARCTIC"];
 
 describe.each([
   {
-    name: "groupBy with small arrays",
+    name: "small arrays",
     array: times(10, identity()),
     grouper: (x: number) => x % 3,
   },
   {
-    name: "groupBy with medium arrays",
+    name: "medium arrays",
     array: times(1000, identity()),
     grouper: (x: number) => x % 10,
   },
   {
-    name: "groupBy with large arrays",
+    name: "large arrays",
     array: times(10_000, identity()),
     grouper: (x: number) => x % 100,
   },
   {
-    name: "groupBy with few groups",
+    name: "few groups",
     array: times(5000, (i) => i % 5),
   },
   {
-    name: "groupBy with many groups",
+    name: "many groups",
     array: times(10_000, identity()),
   },
   {
-    name: "groupBy with string keys",
+    name: "string keys",
     array: times(1000, identity()),
     grouper: (x: number) => `key-${(x % 20).toString()}`,
   },
   {
-    name: "groupBy with symbol keys",
+    name: "symbol keys",
     array: times(1000, (i) => SYMBOLS[i % SYMBOLS.length]),
   },
   {
-    name: "groupBy with problematic property keys",
+    name: "problematic property keys",
     array: [
       { key: "__proto__" },
       { key: "constructor" },
